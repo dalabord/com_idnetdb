@@ -9,16 +9,10 @@ jimport( 'joomla.session.session' );
 JTable::addIncludePath(JPATH_COMPONENT.'/tables');
 
 //load classes
-JLoader::registerPrefix('Lendr', JPATH_COMPONENT);
-
-//Load plugins
-JPluginHelper::importPlugin('lendr');
- 
-//Load styles and javascripts
-LendrHelpersStyle::load();
+JLoader::registerPrefix('Lendr');
 
 //application
-$app = JFactory::getApplication();
+$app = JFactory::getApplication(null);
  
 // Require specific controller if requested
 $controller = $app->input->get('controller','default');
